@@ -1,0 +1,156 @@
+:root {
+  --Pink-400: hsl(0, 36%, 70%);
+  --Red-500: hsl(0, 93%, 68%);
+  --Gray-900: hsl(0, 6%, 24%);
+  --Linear-1: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%) 0%,
+    hsl(0, 100%, 98%) 100%
+  );
+  --Linear-2: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%) 0%,
+    hsl(0, 74%, 74%) 100%
+  );
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(
+      135deg,
+      hsl(0, 0%, 100%) 0%,
+      hsl(0, 100%, 98%) 100%
+    ),
+    linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%),
+    url("../assets/images/bg-pattern-desktop.svg");
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container .content {
+  width: 50%;
+}
+.container .hero-image {
+  width: 50%;
+  background-image: url("../assets/images/hero-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .content {
+  padding: 60px 100px;
+}
+.container .content .logo {
+  margin-bottom: 60px;
+}
+.container .content h1 {
+  font-size: 40px;
+  font-weight: normal;
+  letter-spacing: 0.3ch;
+  text-transform: uppercase;
+  color: var(--Gray-900);
+}
+.container .content h1 span {
+  color: var(--Pink-400);
+}
+.container .content p {
+  margin-top: 20px;
+  color: var(--Pink-400);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.container .content form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.container .content form input[type="email"] {
+  padding: 5px 30px;
+  border: 1px solid var(--Pink-400);
+  border-radius: 20px;
+  outline-style: unset;
+}
+
+.container .content form button {
+  background-color: var(--Pink-400);
+  border-radius: 20px;
+  padding: 5px 30px;
+  border: 1px solid transparent;
+  transform: translateX(-25px);
+  cursor: pointer;
+  box-shadow: 1px 3px 10px var(--Pink-400);
+}
+
+.container .content form button img {
+  width: 8px;
+}
+.error {
+  border: 1px solid var(--Red-500);
+}
+.error-icon {
+  display: none;
+  transform: translateX(-40px) translateY(7px);
+}
+.error-message {
+  display: none;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer .attribution {
+  text-align: center;
+}
+footer .attribution a {
+  color: var(--Pink-400);
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .container .content {
+    padding: 30px 20px;
+  }
+  .container .content h1 {
+    font-size: 28px;
+    letter-spacing: 0.2ch;
+  }
+  .container .content form {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .content {
+    width: 100%;
+    padding: 30px 0px;
+  }
+  .container .content:not(img) {
+    text-align: center;
+  }
+  .container .hero-image {
+    width: 0px;
+  }
+  .hero-image-mobile {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+  }
+}
